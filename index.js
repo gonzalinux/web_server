@@ -9,7 +9,7 @@ let contents=fs.readFileSync("index.html" )
     const requestListener=function(req,res){
 
 
-            console.log(server.address());
+            console.log(server.connections);
             res.setHeader("Content_Type","text/html");
             res.writeHead(200);
             res.end(contents);
