@@ -15,7 +15,8 @@ console.log(archivo)
         for(let i=0;i<archivo.length;i++)
             if(archivo[i]!=ip) {
             console.log("ada")
-                fs.writeFileSync("ips.txt", archivo + "\n" + ip)
+                archivo.push(ip+"\n")
+                fs.writeFileSync("ips.txt", archivo)
             }
             res.setHeader("Content_Type","text/html");
             res.writeHead(200);
