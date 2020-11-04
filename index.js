@@ -17,7 +17,7 @@ let contents=fs.readFileSync("index.html" )
 
     }
 const server =http.createServer(requestListener);
-server.listen(port,host,()=>{
+server.listen(port,()=>{
     console.log("Server is running")
 
 })
