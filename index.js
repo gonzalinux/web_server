@@ -2,7 +2,7 @@ const http=require("http");
 const fs=require("fs")
 //const host="132.145.20.242";
 //const host="localhost";
-const port=80;
+const port=8000;
 let contents=fs.readFileSync("index.html" )
 
 
