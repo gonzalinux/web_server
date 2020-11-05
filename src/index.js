@@ -1,11 +1,19 @@
 const express = require('express');
 const path = require('path');
+let sassMiddleware = require('node-sass-middleware')
 
 //creamos una instancia de express
 const app = express();
 app.set('view engine','ejs')
 app.set("views",path.join(path.join(__dirname, '/views')))
 app.engine("html", require("ejs").renderFile);
+app.use(sassMiddleware({
+    src: path.join(__dirname, 'bootstrap'),
+    dest: path.join(__dirname, 'public'),
+    indentedSyntax: false, // true = .sass and false = .scss
+    sourceMap: true
+}))
+
 // puerto donde queremos que escuche nuestro servidor
 const port = 80;
 app.set('port',port)
