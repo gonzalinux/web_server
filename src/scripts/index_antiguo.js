@@ -1,7 +1,7 @@
 const http=require("http");
 const fs=require("fs")
 //const host="132.145.20.242";
-//const host="localhost";
+const host="localhost";
 const port=80;
 let contents=fs.readFileSync("index.html" )
 let archivo=fs.readFileSync("ips.txt")
@@ -19,13 +19,16 @@ console.log(archivo)
                 fs.writeFileSync("ips.txt", archivo)
             }
             res.setHeader("Content_Type","text/html");
+        res.setHeader("Content_Type","application/javascript")
             res.writeHead(200);
             res.end(contents);
 
 
+
+
     }
 const server =http.createServer(requestListener);
-server.listen(port,()=>{
+server.listen(port,host,()=>{
     console.log("Server is running")
 
 })
